@@ -1,15 +1,17 @@
 variable "vms" {
   description = "Map of VMs to create with their specific configurations"
   type = map(object({
-    description    = string
-    target_node    = string
-    vmid           = number
-    cores          = number
-    sockets        = number
-    memory         = number
-    disk_size      = string
-    ip_config      = string
-    clone_template = string
+    description       = string
+    target_node       = string
+    vmid              = number
+    cores             = number
+    sockets           = number
+    memory            = number
+    disk_size         = string
+    ip_config         = string
+    clone_template    = string
+    disk_storage      = string
+    cloudinit_storage = string
   }))
 }
 
@@ -65,18 +67,6 @@ variable "vm_state" {
   description = "Desired VM state"
   type        = string
   default     = "started"
-}
-
-variable "cloudinit_storage" {
-  description = "Storage for cloud-init disk"
-  type        = string
-  default     = "tera" # "tera"
-}
-
-variable "disk_storage" {
-  description = "Storage for main disk"
-  type        = string
-  default     = "tera" # "tera"
 }
 
 variable "disk_discard" {
