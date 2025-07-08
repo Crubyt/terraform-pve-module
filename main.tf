@@ -45,9 +45,10 @@ resource "proxmox_vm_qemu" "vm" {
   }
 
   # Cloud-init configuration
-  ciuser     = var.ci_user
-  ipconfig0  = each.value.ip_config
-  nameserver = var.nameserver
-  ciupgrade  = var.ci_upgrade
-  sshkeys    = var.ssh_keys
+  ciuser      = var.ci_user
+  ipconfig0   = each.value.ip_config
+  nameserver  = var.nameserver
+  ciupgrade   = var.ci_upgrade
+  sshkeys     = var.ssh_keys
+  cipassword  = var.ci_password
 }

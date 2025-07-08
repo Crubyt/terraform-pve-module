@@ -105,6 +105,12 @@ variable "ci_user" {
   default     = "fer"
 }
 
+variable "ci_password" {
+  description = "Cloud-init password"
+  type        = string
+  default     = "change-me"
+}
+
 variable "nameserver" {
   description = "DNS nameserver"
   type        = string
